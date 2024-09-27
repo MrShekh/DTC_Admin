@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/DTC_Admin/static/css/main.772d1977.css",
+    "main.js": "/DTC_Admin/static/js/main.d4c5878e.js",
+    "static/js/453.319aa5d5.chunk.js": "/DTC_Admin/static/js/453.319aa5d5.chunk.js",
+    "static/media/Bus1.png": "/DTC_Admin/static/media/Bus1.424c3a879b6c613355d3.png",
+    "static/media/manager.png": "/DTC_Admin/static/media/manager.745a1e47aba6e0fb4510.png",
+    "index.html": "/DTC_Admin/index.html",
+    "main.772d1977.css.map": "/DTC_Admin/static/css/main.772d1977.css.map",
+    "main.d4c5878e.js.map": "/DTC_Admin/static/js/main.d4c5878e.js.map",
+    "453.319aa5d5.chunk.js.map": "/DTC_Admin/static/js/453.319aa5d5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.772d1977.css",
+    "static/js/main.d4c5878e.js"
+  ]
+}
