@@ -1,0 +1,150 @@
+/* Title Styling */
+.title {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: left; /* Align title to the left */
+  }
+  
+  /* Header Container with Status Indicators */
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Search and Filter Container */
+  .search-filter-container {
+    display: flex;
+    /* align-items: center; */
+    gap: 80px; /* Removed space between search and filter */
+  }
+  
+  .search-bar input {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 25px; /* Softer rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+  
+  .filter-dropdown select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    background-color: #f7f7f7;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  .filter-dropdown select:focus {
+    outline: none;
+    border-color: #a6963a; /* Subtle border color on focus */
+  }
+  
+  /* Status Indicators */
+  .status-indicators {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between active and inactive indicators */
+  }
+  
+  .status {
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-weight: 600;
+  }
+  
+  .status.active {
+    background-color: #e1f6e1;
+    color: #4caf50;
+  }
+  
+  .status.inactive {
+    background-color: #f8d7da;
+    color: #f44336;
+  }
+  
+ /* Grid Layout for Schedules */
+.schedules-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Space between cards */
+  /* justify-content: space-between; Spread out cards evenly */
+}
+
+/* Individual Schedule Card */
+.schedule-card {
+  flex-basis: calc(100% / 6 - 20px); /* 6 cards per row minus the gap */
+  background-color: #ffffff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.schedule-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+  
+ /* Image Styling */
+.image-container {
+  height: 150px;
+  background: #f0f0f0; /* Light background for placeholder */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Crop only if the image exceeds container size */
+}
+
+.bus-image {
+  max-width: 100%; /* Ensure the image does not exceed the container width */
+  max-height: 100%; /* Ensure the image does not exceed the container height */
+  object-fit: contain; /* Contain the image inside the container without cropping */
+}
+  /* Details Section of the Card */
+  .schedule-details {
+    padding: 15px;
+  }
+  
+  .schedule-details p {
+    margin: 8px 0;
+    color: #555; /* Subtle text color */
+  }
+  
+  .schedule-details .label {
+    color: #888; /* Lighter color for labels */
+    font-weight: 600;
+    margin-right: 5px;
+  }
+  
+  /* View Button Styling */
+  .view-button {
+    padding: 12px 30px;
+    background-color: #a6963a; /* Olive-like color for the button */
+    color: white;
+    border: none;
+    border-radius: 30px; /* Rounded pill-like button */
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease; /* Smooth transition for hover */
+    display: block;
+    width: 100%; /* Full width button */
+    text-align: center;
+  }
+  
+  .view-button:hover {
+    background-color: #8b7748; /* Darker shade for the button on hover */
+  }
+  
+  

@@ -1,0 +1,131 @@
+/* General Container Layout */
+.bus-detail-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #f9f9f9;
+  gap: 20px;
+  height: 100vh; /* Use full page */
+}
+
+/* Left Section */
+.bus-detail-left {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.current-location, .future-shift {
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.route-visualization {
+  margin-top: 20px;
+}
+
+.station {
+  margin-bottom: 10px;
+  padding: 10px;
+  background: #e9ecef;
+  border-radius: 8px;
+}
+
+/* Middle Section */
+.bus-detail-middle {
+  width: 45%;
+  text-align: center;
+}
+
+.bus-image-container {
+  margin-bottom: 20px;
+}
+
+.bus-image {
+  max-width: 100%;
+  border-radius: 12px;
+}
+
+/* Metrics Section */
+.bus-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 15px 0;
+}
+
+.metric-container {
+  flex: 1 1 45%; /* 2 per row */
+  padding: 10px;
+  background: #ffffff;
+  margin: 5px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Additional Info Section */
+.bus-info-container {
+  margin-top: 20px;
+}
+
+.info-item {
+  padding: 10px;
+  background: #ffffff;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Right Section */
+.bus-detail-right {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.map-section {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  height: 400px;
+}
+
+.driver-info-section,
+.conductor-info-section {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.call-driver-btn, 
+.call-conductor-btn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.call-driver-btn:hover, 
+.call-conductor-btn:hover {
+  background: #45a049;
+}
+
+/* Shift Items */
+.future-shift {
+  margin-top: 20px;
+}
+
+.shift-item {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}

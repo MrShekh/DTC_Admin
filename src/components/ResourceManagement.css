@@ -1,0 +1,68 @@
+.resource-management {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #333;
+}
+
+.search-bar {
+    margin-bottom: 20px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.resources-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.resource-section {
+    flex: 1;
+    margin: 0 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+.resource-section h3 {
+    margin-bottom: 10px;
+}
+
+.resource-section table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.resource-section th, .resource-section td {
+    border: 1px solid #eaeaea;
+    padding: 8px;
+    text-align: left;
+}
+
+.resource-section th {
+    background-color: #f2f2f2;
+}
+
+.fetch-button {
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.fetch-button:hover {
+    background-color: #0056b3;
+}

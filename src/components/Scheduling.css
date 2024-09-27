@@ -1,0 +1,63 @@
+.scheduling-container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .driver-list {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+    overflow-y: auto;
+    width: 30%;
+  }
+  
+  .driver-list .MuiListItem-root {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  
+  .selected-driver {
+    background-color: #e0f7fa;
+  }
+  
+  .driver-status {
+    font-weight: bold;
+    margin-left: 10px;
+  }
+  
+  .driver-status.active {
+    color: green;
+  }
+  
+  .driver-status.inactive {
+    color: red;
+  }
+  
+  .driver-details-map {
+    flex-grow: 1;
+    padding: 20px;
+  }
+  
+  .driver-info-container {
+    display: flex;
+    
+    justify-content: space-between; /* Distribute space between containers */
+    gap: 10px; /* Add space between containers */
+    margin-bottom: 20px;
+  }
+  
+  .driver-info-box {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 32%; /* Set width so 3 boxes fit in one line */
+  }
+  
+  .MuiAvatar-root {
+    margin-right: 10px;
+  }
+  

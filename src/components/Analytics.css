@@ -1,0 +1,43 @@
+.analytics-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.analytics-title {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 2rem; /* Increased font size */
+    color: #333;
+}
+
+.summary-card {
+    padding: 16px;
+    background-color: #ffffff;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s; /* Animation for card hover */
+}
+
+.summary-card:hover {
+    transform: scale(1.02); /* Slight zoom effect on hover */
+}
+
+.chart-container {
+    height: 250px; /* Adjust height for charts */
+    width: 100%; /* Set width to 100% of the container */
+}
+
+.chart-container > div {
+    height: 100%; /* Ensure the chart takes full height of the container */
+}
+
+.MuiButton-root {
+    margin-top: 10px; /* Spacing for the button */
+}
+
+@media (max-width: 600px) {
+    .analytics-title {
+        font-size: 1.5rem; /* Adjust font size for smaller screens */
+    }
+}
