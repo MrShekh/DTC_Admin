@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { List, ListItem, ListItemText, Box, Typography, Avatar, Button, TextField, MenuItem } from '@mui/material';
-import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'; // ✅ Correct import
+import 'leaflet/dist/leaflet.css'; // Required CSS
 import './Scheduling.css';
+
+
 
 const drivers = [
   { id: 1, name: 'Connor Wilson', vehicle: 'Blue Mazda3', status: 'active', currentLocation: '1234 Hyperion Ave', pastLocation: '789 Franklin Ave', busId: 'B123', tripRoute: '1234 Bedford Ave to 567 Myrtle Ave', img: 'https://i.pravatar.cc/50?img=1' },
@@ -126,15 +129,18 @@ const Scheduling = () => {
         </Box>
 
         {/* Google Maps Integration */}
-        <LoadScript googleMapsApiKey="YOUR_GOOGLE_MAPS_API_KEY">
-          <GoogleMap
-            mapContainerStyle={{ width: '100%', height: '400px' }}
-            center={{ lat: 40.712776, lng: -74.005974 }}
-            zoom={12}
-          >
-            <Marker position={{ lat: 40.712776, lng: -74.005974 }} />
-          </GoogleMap>
-        </LoadScript>
+      
+
+<MapContainer center={[40.712776, -74.005974]} zoom={13} style={{ height: "400px", width: "100%" }}>
+  <TileLayer
+    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  />
+  <Marker position={[40.712776, -74.005974]}>
+    <Popup>{selectedDriver.name}'s current location</Popup>
+  </Marker>
+</MapContainer>
+
       </Box>
     </Box>
   );

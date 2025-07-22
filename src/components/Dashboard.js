@@ -1,7 +1,19 @@
 import React from 'react';
 import { Typography, Card, CardContent, Grid } from '@mui/material';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import { DirectionsBus, Route, Group, AccessTime } from '@mui/icons-material';
+import {
+  PieChart,
+  Pie,
+  Cell,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from 'recharts';
+import {
+  DirectionsBus,
+  Route,
+  Group,
+  AccessTime,
+} from '@mui/icons-material';
 import './Dashboard.css';
 
 const Dashboard = () => {
@@ -14,10 +26,23 @@ const Dashboard = () => {
     { name: 'Route 5', onTime: 76, delayed: 24 },
   ];
 
+  // Aggregate totals
+  const totalOnTime = routePerformanceData.reduce((acc, route) => acc + route.onTime, 0);
+  const totalDelayed = routePerformanceData.reduce((acc, route) => acc + route.delayed, 0);
+
+  const pieChartData = [
+    { name: 'On Time', value: totalOnTime },
+    { name: 'Delayed', value: totalDelayed },
+  ];
+
+  const pieColors = ['#4caf50', '#f44336']; // green, red
+
   return (
     <div className="dashboard-container">
-      <Typography variant="h4" gutterBottom>Dashboard</Typography>
-      
+      <Typography variant="h4" gutterBottom>
+        Dashboard
+      </Typography>
+
       <Grid container spacing={3}>
         {/* Key Metrics */}
         <Grid item xs={12} sm={6} md={3}>
@@ -61,7 +86,9 @@ const Dashboard = () => {
         <Grid item xs={12} md={6}>
           <Card>
             <CardContent>
-              <Typography variant="h6" gutterBottom>Real-time Fleet Status</Typography>
+              <Typography variant="h6" gutterBottom>
+                Real-time Fleet Status
+              </Typography>
               <Grid container spacing={2}>
                 <Grid item xs={4}>
                   <Typography variant="subtitle1">In Service</Typography>
@@ -84,7 +111,9 @@ const Dashboard = () => {
         <Grid item xs={12} md={6}>
           <Card>
             <CardContent>
-              <Typography variant="h6" gutterBottom>Crew Status</Typography>
+              <Typography variant="h6" gutterBottom>
+                Crew Status
+              </Typography>
               <Grid container spacing={2}>
                 <Grid item xs={4}>
                   <Typography variant="subtitle1">On Duty</Typography>
@@ -103,24 +132,67 @@ const Dashboard = () => {
           </Card>
         </Grid>
 
-        {/* Route Performance Chart */}
-        <Grid item xs={12}>
-          <Card>
-            <CardContent>
-              <Typography variant="h6" gutterBottom>Route Performance</Typography>
-              <ResponsiveContainer width="100%" height={300}>
-                <BarChart data={routePerformanceData}>
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="name" />
-                  <YAxis />
-                  <Tooltip />
-                  <Bar dataKey="onTime" stackId="a" fill="#4caf50" name="On Time" />
-                  <Bar dataKey="delayed" stackId="a" fill="#f44336" name="Delayed" />
-                </BarChart>
-              </ResponsiveContainer>
-            </CardContent>
-          </Card>
+        {/* Pie Chart for Route Performance */}
+        {/* Pie Charts for Route Performance */}
+<Grid item xs={12}>
+  <Card>
+    <CardContent>
+      <Typography variant="h6" gutterBottom>
+        Overall Route Performance
+      </Typography>
+      <Grid container spacing={2}>
+        {/* Pie Chart 1: On Time vs Delayed */}
+        <Grid item xs={12} md={6}>
+          <Typography variant="subtitle1" align="center">On-Time vs Delayed</Typography>
+          <ResponsiveContainer width="100%" height={250}>
+            <PieChart>
+              <Pie
+                data={pieChartData}
+                dataKey="value"
+                nameKey="name"
+                cx="50%"
+                cy="50%"
+                outerRadius={80}
+                label
+              >
+                {pieChartData.map((entry, index) => (
+                  <Cell key={`cell-ontime-${index}`} fill={pieColors[index % pieColors.length]} />
+                ))}
+              </Pie>
+              <Tooltip />
+              <Legend />
+            </PieChart>
+          </ResponsiveContainer>
         </Grid>
+
+        {/* Pie Chart 2: Delayed by Route */}
+        <Grid item xs={12} md={6}>
+          <Typography variant="subtitle1" align="center">Delays by Route</Typography>
+          <ResponsiveContainer width="100%" height={250}>
+            <PieChart>
+              <Pie
+                data={routePerformanceData.map(({ name, delayed }) => ({ name, value: delayed }))}
+                dataKey="value"
+                nameKey="name"
+                cx="50%"
+                cy="50%"
+                outerRadius={80}
+                label
+              >
+                {routePerformanceData.map((_, index) => (
+                  <Cell key={`cell-delayed-${index}`} fill={`#${Math.floor(Math.random() * 16777215).toString(16)}`} />
+                ))}
+              </Pie>
+              <Tooltip />
+              <Legend />
+            </PieChart>
+          </ResponsiveContainer>
+        </Grid>
+      </Grid>
+    </CardContent>
+  </Card>
+</Grid>
+
       </Grid>
     </div>
   );
