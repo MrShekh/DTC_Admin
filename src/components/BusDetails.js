@@ -4,7 +4,7 @@ import './BusDetails.css';
 import busImage from '../assets/Bus1.png';
 
 const BusScheduling = () => {
-  const [schedules, setSchedules] = useState([
+  const [schedules] = useState([
     { id: 1, busNumber: 'BUS001', from: 'Delhi', to: 'Noida', time: '12:00 PM', active: true },
     { id: 2, busNumber: 'BUS002', from: 'Delhi', to: 'Agra', time: '02:30 PM', active: false },
     { id: 3, busNumber: 'BUS003', from: 'Noida', to: 'Gurgaon', time: '04:00 PM', active: true },
